@@ -100,7 +100,7 @@
     "rancherCount": 1,
     "apiVersion": "2015-06-15",  
     "availabilitySet": "[parameters('rancherNodeName')]",
-    "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'rancherserver')]",
+    "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'rancherhost')]",
     "networkSecurityGroupName": "[parameters('rancherNodeName')]",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
@@ -336,9 +336,9 @@
           },
           "compose": {
             "rancheragent": {
-              "image": "rancher/server",
+              "image": "rancher/server:stable",
               "restart": "always",
-			  "ports": ["8080:8080"]
+              "ports": [ "8080:8080" ]
             }
           }
         }

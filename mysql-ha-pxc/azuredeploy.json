@@ -476,7 +476,7 @@
               "diskSizeGB": "1000",
               "lun": 0,
               "vhd": {
-                "Uri": "[variables('dataDisk1VhdName1')]"
+                "uri": "[variables('dataDisk1VhdName1')]"
               },
               "createOption": "Empty"
             },
@@ -485,7 +485,7 @@
               "diskSizeGB": "1000",
               "lun": 1,
               "vhd": {
-                "Uri": "[variables('dataDisk2VhdName1')]"
+                "uri": "[variables('dataDisk2VhdName1')]"
               },
               "createOption": "Empty"
             }
@@ -509,9 +509,10 @@
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName1'))]"
       ],
       "properties": {
-        "publisher": "Microsoft.OSTCExtensions",
-        "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.4",
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
             "[parameters('customScriptFilePath')]"
@@ -565,7 +566,7 @@
               "diskSizeGB": "1000",
               "lun": 0,
               "vhd": {
-                "Uri": "[variables('dataDisk1VhdName2')]"
+                "uri": "[variables('dataDisk1VhdName2')]"
               },
               "createOption": "Empty"
             },
@@ -574,7 +575,7 @@
               "diskSizeGB": "1000",
               "lun": 1,
               "vhd": {
-                "Uri": "[variables('dataDisk2VhdName2')]"
+                "uri": "[variables('dataDisk2VhdName2')]"
               },
               "createOption": "Empty"
             }
@@ -599,9 +600,10 @@
         "[concat('Microsoft.Compute/virtualMachines/',variables('vmName1'),'/extensions/',variables('vmExtensionName'))]"
       ],
       "properties": {
-        "publisher": "Microsoft.OSTCExtensions",
-        "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.4",
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
             "[parameters('customScriptFilePath')]"
@@ -655,7 +657,7 @@
               "diskSizeGB": "1000",
               "lun": 0,
               "vhd": {
-                "Uri": "[variables('dataDisk1VhdName3')]"
+                "uri": "[variables('dataDisk1VhdName3')]"
               },
               "createOption": "Empty"
             },
@@ -664,7 +666,7 @@
               "diskSizeGB": "1000",
               "lun": 1,
               "vhd": {
-                "Uri": "[variables('dataDisk2VhdName3')]"
+                "uri": "[variables('dataDisk2VhdName3')]"
               },
               "createOption": "Empty"
             }
@@ -689,9 +691,10 @@
         "[concat('Microsoft.Compute/virtualMachines/',variables('vmName1'),'/extensions/',variables('vmExtensionName'))]"
       ],
       "properties": {
-        "publisher": "Microsoft.OSTCExtensions",
-        "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.4",
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
             "[parameters('customScriptFilePath')]"
@@ -774,7 +777,7 @@
               "backendAddressPool": {
                 "id": "[variables('ilbBackendAddressPoolID')]"
               },
-              "protocol": "tcp",
+              "protocol": "Tcp",
               "frontendPort": "[parameters('mysqlFrontEndPort')]",
               "backendPort": "[parameters('mysqlBackEndPort')]",
               "enableFloatingIP": false,
@@ -789,7 +792,7 @@
           {
             "name": "[variables('probeName')]",
             "properties": {
-              "protocol": "http",
+              "protocol": "Http",
               "port": "[parameters('probePort')]",
               "intervalInSeconds": "[parameters('probeIntervalInSeconds')]",
               "numberOfProbes": "[parameters('numberOfProbes')]",
