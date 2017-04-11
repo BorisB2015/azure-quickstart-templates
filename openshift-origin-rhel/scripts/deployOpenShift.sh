@@ -8,7 +8,7 @@ PRIVATEKEY=$3
 MASTER=$4
 MASTERPUBLICIPHOSTNAME=$5
 MASTERPUBLICIPADDRESS=$6
-NODEPREFIX=$7
+NODE=$7
 NODECOUNT=$8
 ROUTING=$9
 
@@ -65,7 +65,7 @@ $MASTER.$DOMAIN
 # host group for nodes
 [nodes]
 $MASTER.$DOMAIN openshift_node_labels="{'region': 'master', 'zone': 'default'}"
-$NODEPREFIX-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+$NODE-[0:${NODELOOP}].$DOMAIN openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 EOF
 
 runuser -l $SUDOUSER -c "git clone https://github.com/openshift/openshift-ansible /home/$SUDOUSER/openshift-ansible"
