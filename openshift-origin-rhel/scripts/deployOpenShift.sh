@@ -47,6 +47,8 @@ openshift_install_examples=true
 deployment_type=origin
 openshift_release=v1.5
 openshift_image_tag=v1.5.0-rc.0
+#consider removing the below and keeping only the version
+openshift_pkg_version=-1.5.0
 docker_udev_workaround=True
 openshift_use_dnsmasq=false
 openshift_override_hostname_check=true
