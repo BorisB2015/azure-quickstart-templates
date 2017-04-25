@@ -8,7 +8,7 @@ yum -y install wget git net-tools bind-utils iptables-services bridge-utils bash
 
 # COPR
 
-yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/jdetiber/origin/repo/epel-7/jdetiber-origin-epel-7.repoopr.fedorainfracloud.org/coprs/jdetiber/origin/repo/epel-7/jdetiber-origin-epel-7.repo
+yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/jdetiber/origin/repo/epel-7/jdetiber-origin-epel-7.repo
 
 # Install the epel repo if not already present
 yum -y install https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm

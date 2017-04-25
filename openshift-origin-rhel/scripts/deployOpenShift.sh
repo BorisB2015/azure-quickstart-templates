@@ -53,8 +53,6 @@ docker_udev_workaround=True
 openshift_use_dnsmasq=false
 openshift_override_hostname_check=true
 openshift_master_default_subdomain=$ROUTING
-# per https://github.com/openshift/openshift-ansible/issues/3705
-#enable_docker_excluder=false
 
 openshift_master_cluster_public_hostname=$MASTERPUBLICIPHOSTNAME
 openshift_master_cluster_public_vip=$MASTERPUBLICIPADDRESS
