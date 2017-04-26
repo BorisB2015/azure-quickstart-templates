@@ -590,7 +590,7 @@
 					},
 					"dataDisks": [{
 						"name": "[concat(parameters('openshiftMasterHostname'), '-docker-pool')]",
-						"diskSizeGB": "1023",
+						"diskSizeGB": "128",
 						"lun": 0,
 						"vhd": {
 							"uri": "[concat('https://', variables('newStorageAccountMaster'), '.blob.core.windows.net/vhd/', parameters('openshiftMasterHostname'), '-docker-pool.vhd')]"
@@ -705,7 +705,7 @@
 					},
 					"dataDisks": [{
 						"name": "[concat(variables('namingInfix'), copyIndex(), '-docker-pool')]",
-						"diskSizeGB": "1023",
+						"diskSizeGB": "128",
 						"lun": 0,
 						"vhd": {
 							"uri": "[concat('https://', variables('newStorageAccountNode'), '.blob.core.windows.net/vhd/', variables('namingInfix'), copyIndex(), '-docker-pool.vhd')]"
